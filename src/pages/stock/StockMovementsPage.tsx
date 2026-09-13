@@ -206,8 +206,15 @@ export default function StockMovementsPage() {
                   </Select>
                 </div>
                 <div className="space-y-1">
-                  <Label>Quantidade</Label>
+                  {/* No AJUSTE o numero e o SALDO FINAL (o backend calcula a diferenca) — o rotulo
+                      "Quantidade" deixava a pessoa digitar a diferenca. */}
+                  <Label>{form.tipo === "AJUSTE" ? "Saldo contado" : "Quantidade"}</Label>
                   <Input data-tour="stock-movement-quantity-input" type="number" min="0.0001" step="0.0001" value={form.quantidade} onChange={(e) => setForm((prev) => ({ ...prev, quantidade: Number(e.target.value || 0) }))} />
+                  {form.tipo === "AJUSTE" ? (
+                    <p className="text-xs text-muted-foreground">
+                      Quanto ha na prateleira agora. O saldo passa a ser este numero.
+                    </p>
+                  ) : null}
                 </div>
               </div>
               <div className="space-y-1">
