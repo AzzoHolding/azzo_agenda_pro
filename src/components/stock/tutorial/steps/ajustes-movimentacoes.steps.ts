@@ -16,7 +16,7 @@ export const AJUSTES_MOVIMENTACOES_STEPS: GuidedTourStep[] = [
     target: '[data-tour="stock-movement-new-button"]',
     title: "Corrigindo o saldo com um ajuste",
     content:
-      'Use o mesmo botao "Nova movimentacao" e escolha o tipo "AJUSTE" quando o saldo do sistema nao bate com o saldo real (ex.: apos uma contagem ou uma perda que nao foi lancada como saida).',
+      'Use o mesmo botao "Nova movimentacao" e escolha o tipo "AJUSTE" quando o saldo do sistema nao bate com o saldo real (ex.: apos uma contagem ou uma perda que nao foi lancada como saida). No ajuste, digite o SALDO CONTADO na prateleira: o saldo passa a ser esse numero, e o sistema calcula a diferenca.',
     placement: "bottom",
   },
   {
